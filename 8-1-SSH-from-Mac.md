@@ -1,53 +1,51 @@
-# SSH access from Mac
+# 从Mac访问SSH
 
-### 1.) Open up your Terminal client
+### 1.）打开终端客户端
 
-Open up **Finder**. Go to **Applications** > **Utilities**, then open up the app called **Terminal**
+打开**Finder**。进到**Applications** > **Utilities**，然后打开名字叫**Terminal**的应用程序
 
-### 2.) Verify where your Key Pair is
+### 2.）验证密钥对的位置
 
-By default, your Key Pair should be in your *Downloads* directory. Verify that it's there by pasting the following command:
+默认情况下，你的密钥对应该在*Downloads*目录中。通过粘贴以下命令验证它是否存在：
 
 ```
 ls ~/Downloads/[MY KEYPAIR NAME].pem
 ```
 
-Make sure you replace *[MY KEYPAIR NAME]* with the name you gave your keypair. For example, if I made a Key Pair called `banana-smith-keypair`, then my command should look like this:
+确保将*[MY KEYPAIR NAME]*替换为你给出的密钥对名称。例如，如果我创建了一个名为`banana-smith-keypair`的密钥对，那么我的命令应该是这样的：
 
 ```
 ls ~/Downloads/banana-smith-keypair.pem
 ```
 
-### 3.) Change the ownership of the key pair file.
+### 3.）更改密钥对文件的所有权
 
-Remember: this keypair is your way of logging into your instance! Therefore, it needs to be accessible only by you. We do this by executing the following command:
+请记住：这个密钥对是你登录实例的方式！因此，它只能由你访问。我们通过执行以下命令来执行此操作：
 
 ```
 chmod 600 ~/Downloads/[MY KEYPAIR NAME].pem
 ```
 
-Again, you need to make sure that you replace *[MY KEYPAIR NAME]* with your Key Pair's name. So for `banana-smith-keypair`, we would paste:
+同样，你需要确保用钥匙对的名称替换*[MY KEYPAIR NAME]*。所以对于`banana-smith-keypair`，我们会执行这个命令：
 
 ```
 chmod 600 ~/Downloads/banana-smith-keypair.pem
 ```
 
-### 4.) Copy your instance IP or URL 
+### 4.）复制你的实例IP或URL
 
-Remember how we made a note of the *Public IP* of your EC2 instance? Now we need to use it. Essentially, what we want to do is to login to the IP of the instance using the Key Pair we created. Put it in your clipboard, or make a note of it in Notepad.
+还记得我们怎样记录了你的EC2实例的*Public IP*吗？现在我们需要使用它。基本上，我们想要做的是使用我们创建的密钥对登录到实例IP。将它放在剪贴板中，或在记事本中记下它。
 
-### 5.) Login!
+### 5.）登录
 
-Finally, we login to the instance. We do this with a command that looks like this:
+最后，我们登录到实例。我们使用如下命令执行此操作：
 
 ```
 ssh ec2-user@[MY IP ADDRESS] -i ~/Downloads/[MY KEYPAIR NAME].pem
 ```
 
-Assuming we have a *Public IP* of `22.22.22.22`, and we have a Key Pair called `banana-smith-keypair`, your command would look like this:
+假设我们的*Public IP*为22.22.22.22，并且我们有一个名为`banana-smith-keypair`的密钥对，你的命令应该是这样的：
 
 ```
 ssh ec2-user@22.22.22.22 -i ~/Downloads/banana-smith-keypair.pem
 ```
-
-
