@@ -1,51 +1,51 @@
-# SSH access from Windows 
+# Windows环境SSH方式
 
-Unfortunately, the best SSH client for Windows also requires its own format. So the Windows steps will have two parts: A.) Generating the key, and B.) Using the key
+因为Windows最好的SSH客户端也需要自己的格式，所以Windows环境的步骤将包含两部分: A.）生成密钥， B.）使用密钥
 
-## Generate the key
+## 生成密钥
 
-### 1.) Go to the Putty webpage
+### 1.）转到PuTTY网页
 
-Open up your browser and go to: http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+打开浏览器并访问: http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-### 2.) Download PuTTY
+### 2.）下载PuTTY
 
-Right-click and *Save As* the links for the latest installer. As of time of writing, it's **putty-0.67-installer.msi**
+右键单击最新安装程序的链接，选择 *另存为* 。截至撰写本文时，它是 **putty-0.67-installer.msi**
 
-### 3.) Run the installer
+### 3.）运行安装程序
 
-Execute the MSI file, and go through the installation. It should install a couple of programs, but we only need two: *PuTTY* and *PuTTYGen*
+执行MSI文件，然后完成安装。它会安装几个程序，但我们只需要两个: *PuTTY* 和 *PuTTYGen*。
 
-### 4.) Start PuTTYGen
+### 4.）启动PuTTYGen
 
-From the *Start* menu, choose **All Programs > PuTTY > PuTTYGen**.
+从`开始`菜单中，选择 **所有程序 > PuTTY > PuTTYGen**。
 
-Under **Type of key to generate**, select **SSH-2 RSA**.
+在 **生成的密钥类型** 下面，选择**SSH-2 RSA**。
 
-### 5.) Load your Key Pair
+### 5.）加载密钥对
 
-Click on **Load**. By default, PuTTYgen displays only files with the extension `.ppk`. To locate your .pem file, select the option to display *All Files*. 
+点击 **加载**。默认情况下，PuTTYgen仅显示扩展名为`.ppk`的文件。要找到`.pem`文件，请选择显示*所有文件*的选项。
 
-Go to the directory where you downloaded your Key Pair, open the file, and click on *Open*.
+转到下载密钥对的目录，打开文件，然后单击*打开*。
 
-### 6.) Save your private key
+### 6.）保存你的私钥
 
-Choose **Save private key** to save the key in the format that PuTTY can use. PuTTYgen displays a warning about saving the key without a passphrase. Choose *Yes*.
+选择 **保存私钥**，以PuTTY可以使用的格式保存密钥。 PuTTYgen显示关于在没有密码短语的情况下保存密钥的警告。选择*是*。
 
-### 7.) Name your key
+### 7.）为你的秘钥命名
 
-Specify the same name for the key that you used for the key pair (for example, `banana-smith-keypair`)
+为密钥对使用的密钥指定相同的名称（例如，`banana-smith-keypair`）
 
 
-## Logging in
+## 登录
 
-### 1.) Start PuTTY 
+### 1.）启动PuTTY
 
-From the Start menu, choose **All Programs > PuTTY > PuTTY**
+从`开始`菜单中，选择 **所有程序 > PuTTY > PuTTY**
 
-### 2.) Set your login
+### 2.）设置你的登录信息
 
-In the *Category* pane, select **Session** and complete the following fields:
+在 *Category* 窗格中，选择 **Session** 并填写以下字段: 
 
 
 ```
@@ -54,7 +54,7 @@ In the *Category* pane, select **Session** and complete the following fields:
  Connection type: SSH
 ```
 
-Make sure you replace *[PUBLIC IP]* with the *Public IP* of your EC2 instance. For example: 
+确保将 *[PUBLIC IP]* 替换为EC2实例的 *Public IP*。例如: 
 
 ```
  Host: ec2-user@22.33.44.55
@@ -63,18 +63,18 @@ Make sure you replace *[PUBLIC IP]* with the *Public IP* of your EC2 instance. F
 ```
 
 
-### 3.) Select your key file
+### 3.）选择你的密钥文件
 
-In the *Category* pane, expand **Connection**, expand **SSH**, and then select **Auth**.
+在 *Category* 窗格中，展开 **Connection**，展开 **SSH**，然后选择 **Auth**。
 
-Click on **Browse**. Select the `.ppk` file that you generated for your key pair, and then choose **Open**.
+点击 **Browse**。选择为密钥对生成的`.ppk`文件，然后选择 **Open**。
 
-### 4.) Save your session
+### 4.）保存你的会话
 
-In the *Category* pane, select **Session**. Enter a name for the session under **Saved Sessions**.
+在 *Category* 窗格中，选择 **Session**。在 **Saved Sessions** 下输入会话名称。
 
-Choose **Save**.
+选择 **Save**。
 
-### 5.) Login!
+### 5.）登录
 
-Finally, that's all done. Click on **Open** to start the SSH session - it will display a security alert that you can safely ignore (at least for this session).
+最后，单击**Open**以启动SSH会话 - 它将显示你可以安全忽略的安全警报（至少对于此会话）。
