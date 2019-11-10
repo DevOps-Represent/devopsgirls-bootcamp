@@ -23,7 +23,7 @@ $chmod 400 ~/Downloads/leorentanyag.pem
  
 ### 3) SSH into your instance using your pem key
 
-`ssh -i ~/Downloads/<keyname.pem> ec2-user@<IPv4 Public IP adres>`
+`ssh -i ~/Downloads/<keyname.pem> ec2-user@<IPv4 Public IP adress>`
 
 Example:
 ssh -i ~/Downloads/leorentanyag.pem ec2-user@13.55.214.58
