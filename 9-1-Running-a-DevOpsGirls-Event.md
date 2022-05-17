@@ -1,4 +1,4 @@
-# The following is a list of instructions on how to run a DevOpsGirls Event
+# The following is a list of instructions on how to run a DevOpsRepresent Event
 
 ## Resources
 
@@ -77,9 +77,9 @@ There are a few things you need to do to prepare an AWS account for this trainin
 
 You'll need to create an RDS instance in advance, with the following details:
 
-Database Name: devopsgirlsdb
-Database User: devopsgirls
-Database Password: devopsgirlsrds!
+Database Name: devopsrepdb
+Database User: devopsrep
+Database Password: devopsreprds!
 
 *The instance should have "Publically acessible" set to disabled.*
 
@@ -100,13 +100,13 @@ Source: 172.31.0.0/16
 You'll need to create a Private Hosted Zone for Route 53. Go to *Services > Route 53*, then click on *Create Hosted Zone*. You'll want to set the following:
 
 ```
-Domain Name: devopsgirls.internal
+Domain Name: devopsrep.internal
 VPC: [Your Default VPC]
 ```
 
-## Create a *devopsgirls-training* S3 Bucket
+## Create a *devopsrep-training* S3 Bucket
 
-You're going to want to create an S3 bucket as well. Go to *Services > S3*, then create a new bucket called `devopsgirls-training`. In the bucket, select *Properties*, then go to *Permissions*. Select *Add Bucket Policy* and put the following in:
+You're going to want to create an S3 bucket as well. Go to *Services > S3*, then create a new bucket called `devopsrep-training`. In the bucket, select *Properties*, then go to *Permissions*. Select *Add Bucket Policy* and put the following in:
 
 ```
 {
@@ -124,8 +124,8 @@ You're going to want to create an S3 bucket as well. Go to *Services > S3*, then
 				"s3:PutObject"
 			],
 			"Resource": [
-				"arn:aws:s3:::devopsgirls-training",
-				"arn:aws:s3:::devopsgirls-training/*"
+				"arn:aws:s3:::devopsrep-training",
+				"arn:aws:s3:::devopsrep-training/*"
 			],
 			"Condition": {
 				"StringEquals": {

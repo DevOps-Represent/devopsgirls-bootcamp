@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: DevOps Girls Cloudformation Stack
+Description: DevOps Represent Cloudformation Stack
 
 Parameters:
   InstanceType:
@@ -19,7 +19,7 @@ Parameters:
     Default: 0.0.0.0/0
     AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
-  DevopsGirlsUser:
+  DevopsRepresentUser:
     Default: banana.smith
     Description: Your firstname and lastname
     Type: String
@@ -28,7 +28,7 @@ Parameters:
     ConstraintDescription: must begin with a letter and contain only alphanumeric
       characters.
   WordpressS3Bucket:
-    Default: devopsgirls-training
+    Default: devopsrep-training
     NoEcho: 'true'
     Description: Bucket to get Wordpress from
     Type: String
@@ -160,8 +160,8 @@ Resources:
           - - "#!/bin/bash -xe \n"
             - "yum update -y aws-cfn-bootstrap \n"
             - "aws configure set default.s3.multipart_threshold 64MB \n"
-            - aws s3 cp s3://devopsgirls-training/
-            - !Ref 'DevopsGirlsUser'
+            - aws s3 cp s3://devopsrep-training/
+            - !Ref 'DevopsRepresentUser'
             - "-wordpress.tgz /var/www/wordpress.tgz --no-sign-request \n"
             - "yum install httpd php php-mysql -y \n"
             - "mkdir -p /var/www/html \n"

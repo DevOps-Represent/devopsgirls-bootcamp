@@ -62,7 +62,7 @@ In the same panel, click on *Advanced Details*. In the *User Data* field, paste 
 ```
 #!/bin/bash
 yum install -y mysql php php-mysql httpd
-aws s3 cp s3://devopsgirls-training/firstname.lastname-wordpress.tgz /var/www/wordpress.tgz --no-sign-request
+aws s3 cp s3://devopsrep-training/firstname.lastname-wordpress.tgz /var/www/wordpress.tgz --no-sign-request
 tar xvfz /var/www/wordpress.tgz -C /var/www/html/
 chown -R apache /var/www/html
 service httpd start
@@ -228,7 +228,7 @@ Now that you've done everything to make a self-healing scaling group, it's time 
 
 ### 24.) Download the Cloudformation template
 
-Download the cloudformation template [here](https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/devopsgirls-wordpress.yaml). You can open it with your text editor (Notepad, or something similar).
+Download the cloudformation template [here](https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/devopsrep-wordpress.yaml). You can open it with your text editor (Notepad, or something similar).
 
 ### 25.) Read through the template
 
@@ -245,9 +245,9 @@ This will point you to a page where you can upload your template file. Click on 
 
 ### 27.) Set the Stack Name and Parameters
 
-Set the `DevopsGirlsUser` parameter. Use your `firstname.lastname` format for this.
+Set the `DevopsRepresentUser` parameter. Use your `firstname.lastname` format for this.
 
-Change `WordpressS3Bucket` to the name of your S3 bucket name - for example `devopsgirls-training-2` or `devopsgirls-training-3` depending on which account you were setup in.
+Change `WordpressS3Bucket` to the name of your S3 bucket name - for example `devopsrep-training-2` or `devopsrep-training-3` depending on which account you were setup in.
 
 ### 28.) Review, and click on IAM resources
 
@@ -265,25 +265,25 @@ Go to **Services > Cloudformation** and look for the stack name you set earlier.
 Congratulations! Now you've deployed things with code!
 
 
-[3-1-10-subnets]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-10-subnets.png
-[3-1-11-elb]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-11-elb.png
-[3-1-12-tags]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-12-tags.png
-[3-1-13-review]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-13-review.png
-[3-1-14-elbinstances]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-14-elbinstances.png
-[3-1-15-accesslb]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-15-accesslb.png
-[3-1-16-killec2]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-16-killec2.png
-[3-1-17-instancereplace]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-17-instancereplace.png
-[3-1-18-setasg]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-18-setasg.png
-[3-1-19-upload]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-19-upload.png
-[3-1-18-iam]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-20-iam.png
-[3-1-20-iam]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-20-iam.png
-[3-1-2-instancetype]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-2-instancetype.png
-[3-1-3-iamrole]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-3-iamrole.png
-[3-1-4-userdata]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-4-userdata.png
-[3-1-5-storage]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-5-storage.png
-[3-1-6-secgroups]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-6-secgroups.png
-[3-1-7-reviewlc]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-7-reviewlc.png
-[3-1-8-createsgh]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-8-createsgh.png
-[3-1-9-asgname]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-9-asgname.png
-[3-1-ASG]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-ASG.png
-[3-1-createlcfg]: https://raw.githubusercontent.com/DevOpsGirls/devopsgirls-bootcamp/master/images/3-1-ASG/3-1-createlcfg.png
+[3-1-10-subnets]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-10-subnets.png
+[3-1-11-elb]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-11-elb.png
+[3-1-12-tags]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-12-tags.png
+[3-1-13-review]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-13-review.png
+[3-1-14-elbinstances]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-14-elbinstances.png
+[3-1-15-accesslb]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-15-accesslb.png
+[3-1-16-killec2]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-16-killec2.png
+[3-1-17-instancereplace]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-17-instancereplace.png
+[3-1-18-setasg]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-18-setasg.png
+[3-1-19-upload]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-19-upload.png
+[3-1-18-iam]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-20-iam.png
+[3-1-20-iam]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-20-iam.png
+[3-1-2-instancetype]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-2-instancetype.png
+[3-1-3-iamrole]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-3-iamrole.png
+[3-1-4-userdata]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-4-userdata.png
+[3-1-5-storage]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-5-storage.png
+[3-1-6-secgroups]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-6-secgroups.png
+[3-1-7-reviewlc]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-7-reviewlc.png
+[3-1-8-createsgh]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-8-createsgh.png
+[3-1-9-asgname]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-9-asgname.png
+[3-1-ASG]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-ASG.png
+[3-1-createlcfg]: https://raw.githubusercontent.com/DevOps-Represent/devopsrep-bootcamp/master/images/3-1-ASG/3-1-createlcfg.png
