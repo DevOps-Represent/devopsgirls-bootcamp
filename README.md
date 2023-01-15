@@ -4,7 +4,7 @@
 
 ![DevOps Represent](/images/devopsrep.jpg)
 
-In this repository are the slides and content for DevOps-Represent Bootcamp modules.
+In this repository are the slides and content for DevOpsRepresent Bootcamp modules.
 
 ## Practicals
 
