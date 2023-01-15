@@ -1,20 +1,20 @@
 [![License](https://img.shields.io/badge/License-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-# DevOpsRepresent Bootcamp!
+# DevOps-Represent Bootcamp!
 
 ![DevOps Represent](/images/devopsrep.jpg)
 
-In this repository are the slides and content for DevOpsRepresent Bootcamp modules.
+In this repository are the slides and content for DevOps-Represent Bootcamp modules.
 
 ## Practicals
 
 DevOpsRepresent Bootcamp is composed of three primary modules with an additional modules available for those looking to take on a bit more.
 
-1.) [What are EC2 instances?](https://github.com/DevOpsRepresent/devopsrep-bootcamp/blob/master/1-1-EC2.md)
+1.) [What are EC2 instances?](https://github.com/DevOps-Represent/devopsrep-bootcamp/blob/master/1-1-EC2.md)
 
-2.) [What is an ELB?](https://github.com/DevOpsRepresent/devopsrep-bootcamp/blob/master/2-1-ELB.md)
+2.) [What is an ELB?](https://github.com/DevOps-Represent/devopsrep-bootcamp/blob/master/2-1-ELB.md)
 
-3.) [How do I automate this with Auto Scaling Groups?](https://github.com/DevOpsRepresent/devopsrep-bootcamp/blob/master/3-1-ASG.md)
+3.) [How do I automate this with Auto Scaling Groups?](https://github.com/DevOps-Represent/devopsrep-bootcamp/blob/master/3-1-ASG.md)
 
 Each of the modules represents a continuing improvement on a blog website - a blog that you can login to, and post things in. With each module, we're making the blog more automated, more resilient, and more durable to issues.
 
